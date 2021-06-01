@@ -1,2 +1,2 @@
 # DogFarm
-Task #2 for LeverX.
+Hometask #2 for LeverX.
