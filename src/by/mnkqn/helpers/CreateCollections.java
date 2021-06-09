@@ -4,27 +4,51 @@ import by.mnkqn.essences.*;
 import java.util.List;
 
 public class CreateCollections {
-    public static void fillDogCollection(List<Dog> doges) {
+    public static void fillDogCollection(List<Dog> doges, List<Volier> voliers) {
 
-        doges.add(new Dog("Stephen", 5));
-        doges.add(new Dog("Lolly", 1));
-        doges.add(new Dog("Artek", 9));
-        doges.add(new Dog("Fluffy", 1));
-        doges.add(new Dog("Conny", 7));
-        doges.add(new Dog("Sasha", 4));
+        Dog stephen = new Dog("Stephen", 5);
+        stephen.setVolier(voliers.get(0));
+        stephen.setHealthy(true);
+
+        Dog lolly = new Dog("Lolly", 1);
+        lolly.setVolier(voliers.get(2));
+        lolly.setHealthy(false);
+
+        Dog artek = new Dog("Artek", 9);
+        artek.setVolier(voliers.get(1));
+        artek.setHealthy(true);
+
+        Dog fluffy = new Dog("Fluffy", 1);
+        fluffy.setVolier(voliers.get(2));
+        fluffy.setHealthy(false);
+
+        Dog conny = new Dog("Conny", 7);
+        conny.setVolier(voliers.get(1));
+        conny.setHealthy(true);
+
+        Dog sasha = new Dog("Sasha", 4);
+        sasha.setVolier(voliers.get(0));
+        sasha.setHealthy(false);
+
+        doges.add(stephen);
+        doges.add(lolly);
+        doges.add(artek);
+        doges.add(fluffy);
+        doges.add(conny);
+        doges.add(sasha);
 
     }
 
     public static void fillVeterinaryCollection(List<Veterinary> vets) {
-        vets.add(new Veterinary("Andrew"));
-        vets.add(new Veterinary("Helena"));
-        vets.add(new Veterinary("Marie"));
+        vets.add(new Veterinary("Vet Andrew"));
+        vets.add(new Veterinary("Vet Helena"));
+        vets.add(new Veterinary("Vet Marie"));
     }
 
     public static void fillVolierCollection(List<Volier> voliers) {
         voliers.add(new Volier("Volier 1", true));
         voliers.add(new Volier("Volier 2", false));
-        voliers.add(new Volier("Volier 3", true));
+        voliers.add(new Volier("Volier 3", false));
     }
 
     public static void fillStaffCollection(List<Staff> staff) {

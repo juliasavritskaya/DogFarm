@@ -12,8 +12,11 @@ public class DayModeling {
 
         Random random = new Random();
 
+        List<Volier> voliers = new ArrayList<>();
+        CreateCollections.fillVolierCollection(voliers);
+
         List<Dog> dogs = new ArrayList<>();
-        CreateCollections.fillDogCollection(dogs);
+        CreateCollections.fillDogCollection(dogs, voliers);
 
         List<Veterinary> vets = new ArrayList<>();
         CreateCollections.fillVeterinaryCollection(vets);
@@ -24,8 +27,6 @@ public class DayModeling {
         List<Staff> staffs = new ArrayList<>();
         CreateCollections.fillStaffCollection(staffs);
 
-        List<Volier> voliers = new ArrayList<>();
-        CreateCollections.fillVolierCollection(voliers);
 
         for (Dog doge : dogs) {
             doge.eat();

@@ -8,10 +8,14 @@ public class Staff {
         this.name = name;
     }
 
-    public void cleanVolier(Volier voiler) {
-        System.out.println(getName() + " cleans volier " + voiler.getName());
-        voiler.setClean(true);
-        System.out.println(voiler.getName() + " is now clean");
+    public void cleanVolier(Volier volier) {
+        if (volier.isClean()) {
+            System.out.println(volier.getName() + " is already clean.");
+        } else {
+            System.out.println(getName() + " cleans volier " + volier.getName());
+            volier.setClean(true);
+            System.out.println(volier.getName() + " is now clean");
+        }
     }
 
     public void setName(String name) {
