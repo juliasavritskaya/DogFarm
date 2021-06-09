@@ -26,7 +26,7 @@ public class CreateCollections {
         conny.setVolier(voliers.get(1));
         conny.setHealthy(true);
 
-        Dog sasha = new Dog("Sasha", 4);
+        Dog sasha = new Dog("Sasha", 8);
         sasha.setVolier(voliers.get(0));
         sasha.setHealthy(false);
 

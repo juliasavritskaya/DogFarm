@@ -32,11 +32,11 @@ public class Dog {
     //Присваивает собаке состояние: щенок, взрослая, пожилая.
 
     private void setState() {
-        if (age < 2) {
+        if (age > 0 && age <= 2) {
             state = "Puppy";
         } else if (age > 2 && age < 8) {
             state = "Adult dog";
-        } else if (age > 8) {
+        } else if (age >= 8 ) {
             state = "Old dog";
         }
     }
