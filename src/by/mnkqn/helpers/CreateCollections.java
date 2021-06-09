@@ -41,9 +41,9 @@ public class CreateCollections {
     }
 
     public static void fillVeterinaryCollection(List<Veterinary> vets) {
-        vets.add(new Veterinary("Vet Andrew"));
-        vets.add(new Veterinary("Vet Helena"));
-        vets.add(new Veterinary("Vet Marie"));
+        vets.add(new Veterinary("Andrew"));
+        vets.add(new Veterinary("Helena"));
+        vets.add(new Veterinary("Marie"));
     }
 
     public static void fillVolierCollection(List<Volier> voliers) {
