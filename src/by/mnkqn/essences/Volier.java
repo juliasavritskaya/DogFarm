@@ -19,16 +19,12 @@ public class Volier {
         return clean;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getName();
     }
 }

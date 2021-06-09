@@ -10,22 +10,9 @@ public class Dog {
     private boolean healthy, hungry, trained;
     Volier volier;
 
-    public Dog() {
-        setState();
-    }
-
     public Dog(String name, int age) {
         this.name = name;
         this.age = age;
-        setState();
-    }
-
-    public Dog(String name, int age, boolean healthy, boolean hungry, boolean trained) {
-        this.name = name;
-        this.age = age;
-        this.healthy = healthy;
-        this.hungry = hungry;
-        this.trained = trained;
         setState();
     }
 
@@ -45,20 +32,12 @@ public class Dog {
         return state;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getName() {
         return this.name;
     }
 
     public void isTrained(boolean trained) {
         this.trained = trained;
-    }
-
-    public boolean getTrained() {
-        return trained;
     }
 
     public void setVolier(Volier volier) {
@@ -75,10 +54,6 @@ public class Dog {
 
     public boolean isHealthy() {
         return this.healthy;
-    }
-
-    public boolean isHungry() {
-        return hungry;
     }
 
     public void setHungry(boolean hungry) {
