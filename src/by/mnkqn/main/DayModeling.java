@@ -44,8 +44,10 @@ public class DayModeling {
         System.out.println();
 
         for (Dog doge : dogs) {
-            doge.dailyActivities();
+            doge.dailyActivities(trainingGrounds.get(random.nextInt(2)));
         }
+
+        System.out.println();
 
         for (Dog doge : dogs) {
             doge.eat();

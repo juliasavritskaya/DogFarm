@@ -94,17 +94,17 @@ public class Dog {
         setHungry(false);
     }
 
-    public void dailyActivities() {
+    public void dailyActivities(TrainingGround trainingGround) {
         switch (getState()) {
-            case "Puppy" -> trainPuppy();
+            case "Puppy" -> trainPuppy(trainingGround);
             case "Adult dog" -> adultGoToToWork();
             case "Old dog" -> oldGoToVolier();
         }
         setHungry(true);
     }
 
-    private void trainPuppy() {
-        System.out.println("Puppy " + getName() + " is trained on a training ground.");
+    private void trainPuppy(TrainingGround trainingGround) {
+        System.out.println("Puppy " + getName() + " is trained on a " + trainingGround.getName());
         isTrained(true);
     }
 
@@ -120,7 +120,7 @@ public class Dog {
 }
 
     private void oldGoToVolier() {
-        System.out.println(getName() + " stays at volier.");
+        System.out.println(getName() + " stays at volier " + getVolier());
     }
 
 
