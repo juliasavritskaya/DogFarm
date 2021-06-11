@@ -1,7 +1,8 @@
 package by.mnkqn.essences;
 
 public class TrainingGround {
-    String name;
+
+    private String name;
 
     public TrainingGround(String name) {
         this.name = name;

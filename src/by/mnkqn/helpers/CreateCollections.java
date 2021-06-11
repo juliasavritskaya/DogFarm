@@ -63,4 +63,11 @@ public class CreateCollections {
         trainingGrounds.add(new TrainingGround("small training ground #1"));
         trainingGrounds.add(new TrainingGround("small training ground #2"));
     }
+
+    public static void fillJobsCollection(List<Jobs> jobs) {
+        jobs.add(new Jobs("police station"));
+        jobs.add(new Jobs("medical centre"));
+        jobs.add(new Jobs("volunteer centre"));
+    }
+
 }

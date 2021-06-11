@@ -6,9 +6,16 @@ public class Dog {
 
     private String name;
     private String state;
+    private String puppy = "Puppy";
+    private String adultDog = "Adult Dog";
+    private String oldDog = "Old dog";
     private int age;
-    private boolean healthy, hungry, trained;
-    Volier volier;
+    private final int puppyMaxAge = 2;
+    private final int adultDogMaxAge = 8;
+    private boolean healthy;
+    private boolean hungry;
+    private boolean trained;
+    private Volier volier;
 
     public Dog(String name, int age) {
         this.name = name;
@@ -16,15 +23,14 @@ public class Dog {
         setState();
     }
 
-    //Присваивает собаке состояние: щенок, взрослая, пожилая.
-
+    //Sets state for Dog objects according to their age: puppies, adults, old dogs.
     private void setState() {
-        if (age > 0 && age <= 2) {
-            state = "Puppy";
-        } else if (age > 2 && age < 8) {
-            state = "Adult dog";
-        } else if (age >= 8 ) {
-            state = "Old dog";
+        if (age > 0 && age <= puppyMaxAge) {
+            state = puppy;
+        } else if (age > puppyMaxAge && age < adultDogMaxAge) {
+            state = adultDog;
+        } else if (age >= adultDogMaxAge) {
+            state = oldDog;
         }
     }
 
@@ -61,19 +67,23 @@ public class Dog {
     }
 
     public void eat() {
-        switch (state) {
-            case "Puppy" -> System.out.println(getName() + " is eating puppy's food.");
-            case "Adult dog" -> System.out.println(getName() + " is eating adult's dog food.");
-            case "Old dog" -> System.out.println(getName() + " is eating old's dog food.");
+        if (getState() == puppy) {
+            System.out.println(getName() + " is eating puppy's food.");
+        } else if (getState() == adultDog) {
+            System.out.println(getName() + " is eating adult's dog food.");
+        } else if (getState() == oldDog) {
+            System.out.println(getName() + " is eating old's dog food.");
         }
         setHungry(false);
     }
 
-    public void dailyActivities(TrainingGround trainingGround) {
-        switch (getState()) {
-            case "Puppy" -> trainPuppy(trainingGround);
-            case "Adult dog" -> adultGoToToWork();
-            case "Old dog" -> oldGoToVolier();
+    public void dailyActivities (TrainingGround trainingGround, Jobs jobs) {
+        if (getState() == puppy) {
+            trainPuppy(trainingGround);
+        } else if (getState() == adultDog) {
+            adultGoToToWork(jobs);
+        } else if (getState() == oldDog) {
+            oldGoToVolier();
         }
         setHungry(true);
     }
@@ -83,20 +93,12 @@ public class Dog {
         isTrained(true);
     }
 
-    private void adultGoToToWork() {
-        Random random = new Random();
-        int jobChoice = random.nextInt(3);
-        switch (jobChoice){
-            case 0 -> System.out.println(getName() + " goes to work at the police station.");
-            case 1 -> System.out.println(getName() + " goes to work at the rescue service");
-            case 2 -> System.out.println(getName() + " goes to work as a medical volunteer.");
-            default -> throw new IllegalStateException("Unexpected value: " + jobChoice);
-        }
-}
+    private void adultGoToToWork(Jobs job) {
+        System.out.println(getName() + " goes to work to " + job.getName());
+    }
 
     private void oldGoToVolier() {
         System.out.println(getName() + " stays at volier " + getVolier());
     }
-
 
 }

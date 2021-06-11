@@ -27,6 +27,8 @@ public class DayModeling {
         List<Staff> staffs = new ArrayList<>();
         CreateCollections.fillStaffCollection(staffs);
 
+        List<Jobs> jobs = new ArrayList<>();
+        CreateCollections.fillJobsCollection(jobs);
 
         for (Dog doge : dogs) {
             doge.eat();
@@ -35,17 +37,21 @@ public class DayModeling {
         System.out.println();
 
         for (Dog doge : dogs) {
-            vets.get(random.nextInt(2)).reviewDog(doge);
+            int vetRandom = vets.size();
+            vets.get(random.nextInt(vetRandom)).reviewDog(doge);
         }
 
         for (Volier volier : voliers) {
-            staffs.get(random.nextInt(2)).cleanVolier(volier);
+            int staffRandom = staffs.size();
+            staffs.get(random.nextInt(staffRandom)).cleanVolier(volier);
         }
 
         System.out.println();
 
         for (Dog doge : dogs) {
-            doge.dailyActivities(trainingGrounds.get(random.nextInt(2)));
+            int trainingGroundsRandom = trainingGrounds.size();
+            int jobsRandom = jobs.size();
+            doge.dailyActivities(trainingGrounds.get(random.nextInt(trainingGroundsRandom)), jobs.get(random.nextInt(jobsRandom)));
         }
 
         System.out.println();
@@ -53,8 +59,6 @@ public class DayModeling {
         for (Dog doge : dogs) {
             doge.eat();
         }
-
-
     }
 
 }

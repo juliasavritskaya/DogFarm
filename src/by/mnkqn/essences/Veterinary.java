@@ -27,4 +27,5 @@ public class Veterinary {
         dog.setHealthy(true);
         System.out.println(dog.getName() + " is healthy now\n");
     }
+
 }
